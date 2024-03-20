@@ -1,5 +1,7 @@
 const express = require('express');
 const mysql = require('mysql');
+const app = express();  // Create Express app
+app.use(express.json());    // Middleware to parse JSON bodies
 
 // Create a MySQL connection
 
@@ -21,9 +23,7 @@ connection.connect(err => {
 });
 
 
-const app = express();  // Create Express app
 
-app.use(express.json());    // Middleware to parse JSON bodies
 
 // Start the Express server
 
